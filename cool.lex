@@ -75,10 +75,8 @@ import java_cup.runtime.Symbol;
                                      Further lexical rules should be defined
                                      here, after the last %% separator */
                                   return new Symbol(TokenConstants.DARROW); }
-/* KEYWORDS */
 "class"                         { return new Symbol(TokenConstants.CLASS);  }
 "else"                          { return new Symbol(TokenConstants.ELSE);  }
-"false"                         {   }
 "fi"                            { return new Symbol(TokenConstants.FI);  }
 "if"                            { return new Symbol(TokenConstants.IF);  }
 "in"                            { return new Symbol(TokenConstants.IN);  } 
@@ -93,8 +91,7 @@ import java_cup.runtime.Symbol;
 "esac"                          { return new Symbol(TokenConstants.ESAC);  }
 "new"                           { return new Symbol(TokenConstants.NEW);  }
 "of"                            { return new Symbol(TokenConstants.OF);  }
-"not"                           { return new Symbol(TokenConstants.NOT);  }
-"true"                          {   }
+"not"                           { return new Symbol(TokenConstants.NOT); }
 .                               { /* This rule should be the very last
                                      in your lexical specification and
                                      will match match everything not
