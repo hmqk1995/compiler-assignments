@@ -78,23 +78,23 @@ import java_cup.runtime.Symbol;
 /* KEYWORDS */
 "class"                         { return new Symbol(TokenConstants.CLASS);  }
 "else"                          { return new Symbol(TokenConstants.ELSE);  }
-"false"                         { return new Symbol(TokenConstants.FALSE);  }
-"fi"                            {}
-"if"                            {}
-"in"                            {} 
-"inherits"                      {}
-"isvoid"                        {}
-"let"                           {}
-"loop"                          {}
-"pool"                          {}
-"then"                          {}
-"while"                         {}
-"case"                          {}
-"esac"                          {}
-"new"                           {}
-"of"                            {}
-"not"                           {}
-"true"                          {}
+"false"                         {   }
+"fi"                            { return new Symbol(TokenConstants.FI);  }
+"if"                            { return new Symbol(TokenConstants.IF);  }
+"in"                            { return new Symbol(TokenConstants.IN);  } 
+"inherits"                      { return new Symbol(TokenConstants.INHERITS);  }
+"isvoid"                        { return new Symbol(TokenConstants.ISVOID);  }
+"let"                           { return new Symbol(TokenConstants.LET);  }
+"loop"                          { return new Symbol(TokenConstants.LOOP);  }
+"pool"                          { return new Symbol(TokenConstants.POOL);  }
+"then"                          { return new Symbol(TokenConstants.THEN);  }
+"while"                         { return new Symbol(TokenConstants.WHILE);  }
+"case"                          { return new Symbol(TokenConstants.CASE);  }
+"esac"                          { return new Symbol(TokenConstants.ESAC);  }
+"new"                           { return new Symbol(TokenConstants.NEW);  }
+"of"                            { return new Symbol(TokenConstants.OF);  }
+"not"                           { return new Symbol(TokenConstants.NOT);  }
+"true"                          {   }
 .                               { /* This rule should be the very last
                                      in your lexical specification and
                                      will match match everything not
