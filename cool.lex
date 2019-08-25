@@ -69,12 +69,19 @@ import java_cup.runtime.Symbol;
 %class CoolLexer
 %cup
 
+TypeIdentifier = [A-Z][A-Za-z0-9_]*
+
 %%
 
 <YYINITIAL>"=>"			{ /* Sample lexical rule for "=>" arrow.
                                      Further lexical rules should be defined
                                      here, after the last %% separator */
                                   return new Symbol(TokenConstants.DARROW); }
+[ ]                             {  }
+{TypeIdentifier}                { 
+				  AbstractSymbol typeid = AbstractTable.idtable.addString(yytext());
+				  return new Symbol(TokenConstants.TYPEID, typeid); 
+}
 "class"                         { return new Symbol(TokenConstants.CLASS);  }
 "else"                          { return new Symbol(TokenConstants.ELSE);  }
 "fi"                            { return new Symbol(TokenConstants.FI);  }
